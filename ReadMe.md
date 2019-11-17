@@ -7,3 +7,5 @@ Create a secret variable vault_password in jenkinsfile where password is stored 
 export it into a file at the run time and pass it to decrypt the key
 
 Finally run ansible playbook to deploy nginx on the desired instances 
+
+ansible-playbook -i inventory.cfg nginx.yml --private-key=./nishant_encrypted.pem
