@@ -1,5 +1,13 @@
 pipeline {
     agent any
+    
+      stage('Checkout external proj') {
+        steps {
+            git branch: 'master',
+                credentialsId: 'my_cred_id',
+                url: 'https://github.com/nishantguptaxe/ansible-nginx.git'
+        }
+    }
 
     stages {
         stage('Decrypt pem file and Deploy nginx') {
